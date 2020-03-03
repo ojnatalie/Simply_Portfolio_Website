@@ -81,7 +81,23 @@
 		<footer class="footer">
 			<p>Copyright © 2020 Natalia Bartoszek | bartoszeknataliaa@gmail.com</p>
 		</footer>
-		<script src="js.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+		function scroll(e) {
+
+		    var href = $(this).attr('href');
+
+		    e.preventDefault();
+
+		    $('html, body').animate({
+			scrollTop: $(href).offset().top
+		    }, 800);
+
+		    location.hash = href;
+
+		};
+
+		$('a[href^="#"]').click(scroll);
+		</script>
 	</body>
 </html>
